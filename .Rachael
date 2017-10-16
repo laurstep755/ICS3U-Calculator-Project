@@ -1,1 +1,14 @@
+// Number Buttons Object
 
+Class NumberButtons {
+  int number;
+  int xCoord;
+  int yCoord;
+  int height;
+  boolean isPressed;
+  String digit;
+  
+  NumberButtons(int nnumber) {
+  number = nnumber;
+  }
+};
