@@ -1,13 +1,59 @@
+FunctionButton addButton;
+FunctionButton subtractButton;
+FunctionButton multiplyButton;
+FunctionButton divideButton;
+FunctionButton equalButton;
+
 void setup() {
-  size(500, 400);
+  size(500, 620);
   background(27, 45, 91);
+  
+  addButton = new FunctionButton();
+  addButton.setXCoord (380);
+  addButton.setYCoord(500);
+  addButton.setNumber(12);
+  addButton.setText ("+");
   };
   
-  class FunctionButtons {
+  
+  void draw() {
+    fill(255, 255,255);
+   addButton.displayFunctionButton(); 
+  }
+  
+  class FunctionButton {
   
   int xCoord;
   int yCoord;
+  int number;
+  String text;
+  int Height = 500;
   
+    FunctionButton(){
+  }
   
+  void setXCoord (int xxCoord) {
+   xCoord = xxCoord;
+  }
+  
+  void setYCoord (int yyCoord) {
+   yCoord = yyCoord;
+  }
+  
+  void setNumber (int nnumber) {
+  number = nnumber; 
+  }
+  
+  void setText (String ttext) {
+   text = ttext;
+  }
+
+  
+  void displayFunctionButton() {
+   rect(xCoord, yCoord, 100, 100, 16); 
+   fill(0, 0, 0);
+   text(text, xCoord+15, yCoord+80);
+   textSize(100);
+  }
   
   }
