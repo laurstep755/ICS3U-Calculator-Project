@@ -46,7 +46,13 @@ class cal {
   rect(450, 50, Height*0.1, Height*0.04);
   fill(Red, Green, Blue);
   ellipse(450, 450, Height, Height);
-  rect(450, 450, 500, 600);
-  
+  rect(450, 450, 500, 620);
+  fill(55);
+  rect(450, 210, 460, 100, 16);
+  fill(200);
+  ellipse(450, 100, 50, 50);
+  noStroke();
+  fill(Red, Green, Blue);
+  ellipse(475, 95, 30, 30);
   }
 }
