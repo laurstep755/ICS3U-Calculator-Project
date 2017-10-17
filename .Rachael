@@ -1,14 +1,78 @@
-// Number Buttons Object
+NumberButton b1;
+NumberButton b2;
+NumberButton b3;
+NumberButton b4;
+NumberButton b5;
+NumberButton b6;
+NumberButton b7;
+NumberButton b8;
+NumberButton b9;
+NumberButton b10;
 
-Class NumberButtons {
+void setup() {
+  fill (200, 150, 200);
+  size (1000, 1000);
+  rect (0, 0, 500, 620);
+  
+  
+  b1 = new NumberButton(1);
+  b2 = new NumberButton(2);
+  b3 = new NumberButton(3);
+  b4 = new NumberButton(4);
+  b5 = new NumberButton(5);
+  b6 = new NumberButton(6);
+  b7 = new NumberButton(7);
+  b8 = new NumberButton(8);
+  b9 = new NumberButton(9);
+  b10 = new NumberButton(10);
+};
+
+class NumberButton {
   int number;
   int xCoord;
   int yCoord;
-  int height;
-  boolean isPressed;
-  String digit;
+  String text;
   
-  NumberButtons(int nnumber) {
-  number = nnumber;
+
+  
+  NumberButton(int nnumber) {
+    number = nnumber;
   }
+  
+  void drawButton(int xCoord, int yCoord) {
+    //rectMode(CENTER);
+    fill(255);
+    rect(xCoord, yCoord, 100, 100, 16);
+  }
+  
+  void setText(String ttext) {
+    fill(0);
+    text = ttext;
+    text(text, xCoord+10, yCoord+80);
+  }  
+};
+
+void draw() {
+  b1.drawButton(20, 140);
+  b2.drawButton(140, 140);
+  b3.drawButton(260, 140);
+  b4.drawButton(20, 260);
+  b5.drawButton(140, 260);
+  b6.drawButton(260, 260);
+  b7.drawButton(20, 380);
+  b8.drawButton(140, 380);
+  b9.drawButton(260, 380);
+  b10.drawButton(20, 500);
+  
+  fill(0);
+  b1.setText("7");
+  b2.setText("8");
+  b3.setText("9");
+  b4.setText("4");
+  b5.setText("5");
+  b6.setText("6");
+  b7.setText("1");
+  b8.setText("2");
+  b9.setText("3");
+  b10.setText("0");
 };
