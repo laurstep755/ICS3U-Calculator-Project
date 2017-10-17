@@ -1,1 +1,52 @@
+cal yo;
 
+void setup() {
+ size(900, 900);
+ background(0, 255, 255);
+ 
+ yo = new cal();
+ 
+ yo.setColour(216, 132, 6);
+ 
+ yo.setCColour(101, 62, 0);
+ 
+ yo.Height(800);
+}
+
+void draw() {
+  yo.displaycal();
+}
+
+class cal {
+ int Height;
+ int Red;
+ int Green;
+ int Blue;
+ int RRed;
+ int GGreen;
+ int BBlue;
+ 
+ void setColour(int rred, int ggreen, int bblue) {
+    Red = rred;
+    Green = ggreen;
+    Blue = bblue;
+  }
+  void setCColour(int rrred, int gggreen, int bbblue) {
+    RRed = rrred;
+    GGreen = gggreen;
+    BBlue = bbblue;
+  }
+  void Height (int hheight) {
+    Height = hheight;
+  }
+  
+  void displaycal() {
+  rectMode(CENTER);
+  fill(RRed, GGreen, BBlue);
+  rect(450, 50, Height*0.1, Height*0.04);
+  fill(Red, Green, Blue);
+  ellipse(450, 450, Height, Height);
+  rect(450, 450, 500, 600);
+  
+  }
+}
