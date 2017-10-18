@@ -23,14 +23,20 @@ void setup() {
   multiplyButton = new FunctionButton();
   multiplyButton.setXCoord (380);
   multiplyButton.setYCoord(260);
-  multiplyButton.setNumber(12);
+  multiplyButton.setNumber(14);
   multiplyButton.setText ("×");
   
   divideButton = new FunctionButton();
   divideButton.setXCoord (380);
   divideButton.setYCoord(140);
-  divideButton.setNumber(13);
+  divideButton.setNumber(15);
   divideButton.setText ("÷");
+  
+  equalButton = new FunctionButton();
+  equalButton.setXCoord (260);
+  equalButton.setYCoord(500);
+  equalButton.setNumber(11);
+  equalButton.setText ("=");
   };
   
   
@@ -39,8 +45,29 @@ void setup() {
    addButton.displayFunctionButton(); 
    subtractButton.displayFunctionButton(); 
    multiplyButton.displayFunctionButton(); 
-   divideButton.displayFunctionButton(); 
-  }
+   divideButton.displayFunctionButton();
+   equalButton.displayFunctionButton();
+   
+   if (mousePressed == true && mouseX >380 && mouseX < 480 && mouseY > 500 && mouseY <600) {
+   fill(10);
+   rect(20, 20, 20, 20);} 
+ 
+ 
+ if (mousePressed == true && mouseX >380 && mouseX < 480 && mouseY > 380 && mouseY <480) {
+   fill(55);
+   rect(20, 20, 20, 20);} 
+ 
+ 
+ if (mousePressed == true && mouseX >380 && mouseX < 480 && mouseY > 260 && mouseY <360) {
+   fill(80);
+   rect(20, 20, 20, 20);} 
+ 
+ 
+ if (mousePressed == true && mouseX >380 && mouseX < 480 && mouseY > 140 && mouseY <240) {
+   fill(120);
+   rect(20, 20, 20, 20);} 
+ }
+  
   
   class FunctionButton {
   
@@ -68,6 +95,9 @@ void setup() {
   void setText (String ttext) {
    text = ttext;
   }
+  
+  void checkIfPressed () {
+  }
 
   
   void displayFunctionButton() {
@@ -78,5 +108,5 @@ void setup() {
    text(text, xCoord+50, yCoord+75);
    textSize(80);
   }
-  
-  }
+ 
+ }
