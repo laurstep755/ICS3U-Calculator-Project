@@ -13,12 +13,33 @@ void setup() {
   addButton.setYCoord(500);
   addButton.setNumber(12);
   addButton.setText ("+");
+  
+  subtractButton = new FunctionButton();
+  subtractButton.setXCoord (380);
+  subtractButton.setYCoord(380);
+  subtractButton.setNumber(13);
+  subtractButton.setText ("-");
+  
+  multiplyButton = new FunctionButton();
+  multiplyButton.setXCoord (380);
+  multiplyButton.setYCoord(260);
+  multiplyButton.setNumber(12);
+  multiplyButton.setText ("×");
+  
+  divideButton = new FunctionButton();
+  divideButton.setXCoord (380);
+  divideButton.setYCoord(140);
+  divideButton.setNumber(13);
+  divideButton.setText ("÷");
   };
   
   
   void draw() {
     fill(255, 255,255);
    addButton.displayFunctionButton(); 
+   subtractButton.displayFunctionButton(); 
+   multiplyButton.displayFunctionButton(); 
+   divideButton.displayFunctionButton(); 
   }
   
   class FunctionButton {
@@ -50,10 +71,12 @@ void setup() {
 
   
   void displayFunctionButton() {
+   fill(255, 255,255);
    rect(xCoord, yCoord, 100, 100, 16); 
    fill(0, 0, 0);
-   text(text, xCoord+15, yCoord+80);
-   textSize(100);
+   textAlign(CENTER);
+   text(text, xCoord+50, yCoord+75);
+   textSize(80);
   }
   
   }
