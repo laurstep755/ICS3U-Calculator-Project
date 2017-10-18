@@ -50,9 +50,11 @@ class cal {
   fill(55);
   rect(450, 210, 460, 100, 16);
   fill(200);
-  ellipse(450, 100, 50, 50);
-  noStroke();
+  ellipse(450, 100, 50, 45);
+  ellipse(460, 100, 30, 50);
+  ellipse(440, 100, 30, 50);
+  ellipse(450, 70, 6, 14);
   fill(Red, Green, Blue);
-  ellipse(475, 95, 30, 30);
+  ellipse(480, 95, 30, 30);
   }
 }
