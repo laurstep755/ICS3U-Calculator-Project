@@ -24,8 +24,10 @@ FunctionButton equalButton;
 FunctionButton clearButton;
 
 void setup() {
-  fill (200, 150, 200);
   size(500, 620);
+  background(100);
+  fill(155);
+  rect(20, 20, 460 ,100, 16);
 
   rect (0, 0, 500, 620);
   b1 = new NumberButton(1);
