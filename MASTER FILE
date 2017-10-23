@@ -102,7 +102,7 @@ void setup() {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-int clicks = 1;
+int clicks = 0;
 
 
 void draw() {
@@ -313,10 +313,6 @@ class NumberButton {
     text = ttext;
   } 
 
-  void buttonPressed(boolean bbuttonPressed) {
-    buttonPressed = bbuttonPressed;
-  };
-
   void drawButton(int xCoord, int yCoord) {
     fill(255);
     rect(xCoord, yCoord, 100, 100, 16);
@@ -324,8 +320,6 @@ class NumberButton {
     textSize(50);
     text(text, xCoord + 35, yCoord + 70);
   } 
-
-  };
 
 };
 
