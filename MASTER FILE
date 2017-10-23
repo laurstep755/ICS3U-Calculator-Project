@@ -167,113 +167,113 @@ void draw() {
   
   
   if (mouseX>20 && mouseX<120 && mouseY>140 && mouseY<240 && mousePressed == true) {
-      if (clicks = 1) {
+      if (clicks == 1) {
       firstNumber = 7;
-      } if (clicks = 2) {
+      } if (clicks == 2) {
       secondNumber = 7;
-      } if (clicks = 3) {
+      } if (clicks == 3) {
       thirdNumber = 7;
-      } if (clicks = 4) {
+      } if (clicks == 4) {
       fourthNumber = 7;
       }
   }
   if (mouseX>140 && mouseX<240 && mouseY>140 && mouseY<240 && mousePressed == true) {
-      if (clicks = 1) {
+      if (clicks == 1) {
       firstNumber = 8;
-      } if (clicks = 2) {
+      } if (clicks == 2) {
       secondNumber = 8;
-      } if (clicks = 3) {
+      } if (clicks == 3) {
       thirdNumber = 8;
-      } if (clicks = 4) {
+      } if (clicks == 4) {
       fourthNumber = 8;
       }
   }
   if (mouseX>260 && mouseX<360 && mouseY>140 && mouseY<240 && mousePressed == true) {
-     if (clicks = 1) {
+     if (clicks == 1) {
       firstNumber = 9;
-      } if (clicks = 2) {
+      } if (clicks == 2) {
       secondNumber = 9;
-      } if (clicks = 3) {
+      } if (clicks == 3) {
       thirdNumber = 9;
-      } if (clicks = 4) {
+      } if (clicks == 4) {
       fourthNumber = 9;
       }
   }
-  if (mouseX>20 && mouseX<120 && mouseY>260 && ouseY<360 && mousePressed == true) {
-      if (clicks = 1) {
+  if (mouseX>20 && mouseX<120 && mouseY>260 && mouseY<360 && mousePressed == true) {
+      if (clicks == 1) {
       firstNumber = 4;
-      } if (clicks = 2) {
+      } if (clicks == 2) {
       secondNumber = 4;
-      } if (clicks = 3) {
+      } if (clicks == 3) {
       thirdNumber = 4;
-      } if (clicks = 4) {
+      } if (clicks == 4) {
       fourthNumber = 4;
       }
   }
   if (mouseX>140 && mouseX<240 && mouseY>260 && mouseY<360 && mousePressed == true) {
-     if (clicks = 1) {
+     if (clicks == 1) {
       firstNumber = 5;
-      } if (clicks = 2) {
+      } if (clicks == 2) {
       secondNumber = 5;
-      } if (clicks = 3) {
+      } if (clicks == 3) {
       thirdNumber = 5;
-      } if (clicks = 4) {
+      } if (clicks == 4) {
       fourthNumber = 5;
       }
   }
   if (mouseX>260 && mouseX<360 && mouseY>260 && mouseY<360 && mousePressed == true) {
-      if (clicks = 1) {
+      if (clicks == 1) {
       firstNumber = 6;
-      } if (clicks = 2) {
+      } if (clicks == 2) {
       secondNumber = 6;
-      } if (clicks = 3) {
+      } if (clicks == 3) {
       thirdNumber = 6;
-      } if (clicks = 4) {
+      } if (clicks == 4) {
       fourthNumber = 6;
       }
   }
   if (mouseX>20 && mouseX<120 && mouseY>380 && mouseY<480 && mousePressed == true) {
-     if (clicks = 1) {
+     if (clicks == 1) {
       firstNumber = 1;
-      } if (clicks = 2) {
+      } if (clicks == 2) {
       secondNumber = 1;
-      } if (clicks = 3) {
+      } if (clicks == 3) {
       thirdNumber = 1;
-      } if (clicks = 4) {
+      } if (clicks == 4) {
       fourthNumber = 1;
       }
   }
   if (mouseX>140 && mouseX<240 && mouseY>380 && mouseY<480 && mousePressed == true) {
-      if (clicks = 1) {
+      if (clicks == 1) {
       firstNumber = 2;
-      } if (clicks = 2) {
+      } if (clicks == 2) {
       secondNumber = 2;
-      } if (clicks = 3) {
+      } if (clicks == 3) {
       thirdNumber = 2;
-      } if (clicks = 4) {
+      } if (clicks == 4) {
       fourthNumber = 2;
       }
   }
   if (mouseX>260 && mouseX<360 && mouseY>380 && mouseY<480 && mousePressed == true) {
-      if (clicks = 1) {
+      if (clicks == 1) {
       firstNumber = 3;
-      } if (clicks = 2) {
+      } if (clicks == 2) {
       secondNumber = 3;
-      } if (clicks = 3) {
+      } if (clicks == 3) {
       thirdNumber = 3;
-      } if (clicks = 4) {
+      } if (clicks == 4) {
       fourthNumber = 3;
       }
   }
   if (mouseX>140 && mouseX<240 && mouseY>500 && mouseY<600 && mousePressed == true) {
-      if (clicks = 1) {
-      firstNumber = 
-      } if (clicks = 2) {
-      secondNumber = 
-      } if (clicks = 3) {
-      thirdNumber = 
-      } if (clicks = 4) {
-      fourthNumber = 
+      if (clicks == 1) {
+      firstNumber = 0;
+      } if (clicks == 2) {
+      secondNumber = 0;
+      } if (clicks == 3) {
+      thirdNumber = 0;
+      } if (clicks == 4) {
+      fourthNumber = 0;
       }
   }
 };
