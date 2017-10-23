@@ -158,21 +158,34 @@ void draw() {
     equalButtonPressed = true;
   } 
   if (whichFunction == "add") {
-    answer = firstNumber + secondNumber;
-  }
+    answer =firstNumber + secondNumber;
+    textSize(80);
+    text("+", 190, 100);  
+}
+  
   if (whichFunction == "subtract") {
     answer = firstNumber - secondNumber;
+    textSize(80);
+    text("-", 190, 100);
   }
+  
   if (whichFunction == "multiply") {
     answer = firstNumber * secondNumber;
+    textSize(80);
+    text("×", 190, 100);
   }
+  
   if (whichFunction == "divide") {
     answer = firstNumber / secondNumber;
+    textSize(80);
+    text("÷", 190, 100);
   }
-  if(equalButtonPressed == true) {
-  textSize(30);
-  text (answer, 20, 100); }
   
+  if(equalButtonPressed == true) {
+  textSize(80);
+  text(answer, 400, 100); 
+  text("=", 320, 100);
+  }
   
   
   
