@@ -25,11 +25,11 @@ FunctionButton clearButton;
 
 void setup() {
   size(500, 620);
-  background(100);
+  fill(100);
+  rect(0, 0, 500, 620);
   fill(155);
   rect(20, 20, 460 ,100, 16);
 
-  rect (0, 0, 500, 620);
   b1 = new NumberButton(1);
   b2 = new NumberButton(2);
   b3 = new NumberButton(3);
