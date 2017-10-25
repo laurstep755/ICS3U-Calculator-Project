@@ -1,10 +1,15 @@
 String whichFunction;
-int firstNumber;
-int secondNumber;
-int thirdNumber;
-int fourthNumber;
+float firstNumber;
+float secondNumber =1;
+float thirdNumber;
+float fourthNumber;
 boolean equalButtonPressed;
-int answer;
+float answer;
+boolean pressed;
+int red;
+int blue;
+int green;
+
 
 NumberButton b1;
 NumberButton b2;
@@ -18,6 +23,7 @@ NumberButton b9;
 NumberButton b10;
 
 
+
 FunctionButton addButton;
 FunctionButton subtractButton;
 FunctionButton multiplyButton;
@@ -29,10 +35,10 @@ FunctionButton clearButton;
 
 void setup() {
   size(500, 620);
-  fill(100);
+  fill(#898BA0);
   rect(0, 0, 500, 620);
   fill(155);
-  rect(20, 20, 460 ,100, 16);
+  rect(20, 20, 460, 100, 16);
 
   b1 = new NumberButton(1);
   b2 = new NumberButton(2);
@@ -55,7 +61,7 @@ void setup() {
   b8.setText("2");
   b9.setText("3");
   b10.setText("0");
-
+  
   addButton = new FunctionButton();
   addButton.setXCoord (380);
   addButton.setYCoord(500);
@@ -90,38 +96,54 @@ void setup() {
   equalButton.setNumber(11);
   equalButton.setText ("=");
   equalButton.setTextSize(80);
-  
+
   clearButton = new FunctionButton();
   clearButton.setXCoord (20);
   clearButton.setYCoord(500);
   clearButton.setNumber(16);
   clearButton.setText("A/C");
   clearButton.setTextSize(40);
-  
+
+  mouseClicked();
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 int clicks = 0;
 
+void mouseClicked() {
+  clicks = clicks + 1;
+  if (mousePressed) {
+    pressed = true;
+  } else {
+    pressed = false;
+  }
+};
+
+
 
 void draw() {
-  
-  if (mousePressed == true) {
-    clicks = clicks + 1;
-  }
-
+  fill(255, 113, 113);
   b1.drawButton(20, 140);
+  fill(255, 165, 113);
   b2.drawButton(140, 140);
+  fill(255, 206, 113);
   b3.drawButton(260, 140);
+  fill(255, 241, 113);
   b4.drawButton(20, 260);
+  fill(203, 255, 113);
   b5.drawButton(140, 260);
+  fill(113, 255, 121);
   b6.drawButton(260, 260);
+  fill(113, 206, 255);
   b7.drawButton(20, 380);
+  fill(124, 113, 255);
   b8.drawButton(140, 380);
+  fill(179, 113, 255);
   b9.drawButton(260, 380);
+  fill(247, 180, 247);
   b10.drawButton(140, 500);
-  
+
 
 
   fill(255, 255, 255);
@@ -147,156 +169,214 @@ void draw() {
   if (mousePressed == true && mouseX >260 && mouseX < 360 && mouseY > 500 && mouseY <600) {
     equalButtonPressed = true;
   } 
+
+  if (mousePressed == true && mouseX >20 && mouseX < 140 && mouseY > 500 && mouseY <600) {
+    setup();
+    equalButtonPressed = false;
+    whichFunction = null;
+    firstNumber = 0;
+    secondNumber = 0;
+    thirdNumber = 0;
+    fourthNumber = 0;
+    clicks=0;
+  } 
   if (whichFunction == "add") {
-    answer =firstNumber + secondNumber;
+    answer = firstNumber + secondNumber;
     textSize(80);
-    text("+", 150, 100);  
-}
-  
+    text("+", 150, 100);
+  }
+
   if (whichFunction == "subtract") {
     answer = firstNumber - secondNumber;
     textSize(80);
     text("-", 150, 100);
   }
-  
+
   if (whichFunction == "multiply") {
     answer = firstNumber * secondNumber;
     textSize(80);
     text("×", 150, 100);
   }
-  
+
   if (whichFunction == "divide") {
     answer = firstNumber / secondNumber;
     textSize(80);
     text("÷", 150, 100);
   }
-  
-  if(equalButtonPressed == true) {
-  textSize(80);
-  text(answer, 400, 100); 
-  text("=", 305, 100);
+
+  if (equalButtonPressed == true) {
+    textSize(80);
+    if(whichFunction == "divide") {
+    text(String.format ("%,.1f", answer), 400, 100); }
+    if((whichFunction == "add") || (whichFunction == "subtract") || (whichFunction == "multiply")) {
+    text(String.format ("%,.0f", answer), 400, 100); }
+    text("=", 305, 100);
   }
-  
-  
-  textSize(80);
-  text(firstNumber, 70, 100);
-  text(secondNumber, 220, 100);
- 
-  
-  
-  
-  
+
   if (mouseX>20 && mouseX<120 && mouseY>140 && mouseY<240 && mousePressed == true) {
-      if (clicks == 1) {
+    if (clicks == 1) {
       firstNumber = 7;
-      } if (clicks == 2) {
+    } 
+    if (clicks == 3) {
       secondNumber = 7;
-      } if (clicks == 3) {
+    } 
+    if (clicks == 5) {
       thirdNumber = 7;
-      } if (clicks == 4) {
+    } 
+    if (clicks == 7) {
       fourthNumber = 7;
-      }
+    }
   }
   if (mouseX>140 && mouseX<240 && mouseY>140 && mouseY<240 && mousePressed == true) {
-      if (clicks == 1) {
+    if (clicks == 1) {
       firstNumber = 8;
-      } if (clicks == 2) {
+    } 
+    if (clicks == 3) {
       secondNumber = 8;
-      } if (clicks == 3) {
+    } 
+    if (clicks == 5) {
       thirdNumber = 8;
-      } if (clicks == 4) {
+    } 
+    if (clicks == 7) {
       fourthNumber = 8;
-      }
+    }
   }
   if (mouseX>260 && mouseX<360 && mouseY>140 && mouseY<240 && mousePressed == true) {
-     if (clicks == 1) {
+    if (clicks == 1) {
       firstNumber = 9;
-      } if (clicks == 2) {
+    } 
+    if (clicks == 3) {
       secondNumber = 9;
-      } if (clicks == 3) {
+    } 
+    if (clicks == 5) {
       thirdNumber = 9;
-      } if (clicks == 4) {
+    } 
+    if (clicks == 7) {
       fourthNumber = 9;
-      }
+    }
   }
   if (mouseX>20 && mouseX<120 && mouseY>260 && mouseY<360 && mousePressed == true) {
-      if (clicks == 1) {
+    if (clicks == 1) {
       firstNumber = 4;
-      } if (clicks == 2) {
+    } 
+    if (clicks == 3) {
       secondNumber = 4;
-      } if (clicks == 3) {
+    } 
+    if (clicks == 5) {
       thirdNumber = 4;
-      } if (clicks == 4) {
+    } 
+    if (clicks == 7) {
       fourthNumber = 4;
-      }
+    }
   }
   if (mouseX>140 && mouseX<240 && mouseY>260 && mouseY<360 && mousePressed == true) {
-     if (clicks == 1) {
+    if (clicks == 1) {
       firstNumber = 5;
-      } if (clicks == 2) {
+    } 
+    if (clicks == 3) {
       secondNumber = 5;
-      } if (clicks == 3) {
+    } 
+    if (clicks == 5) {
       thirdNumber = 5;
-      } if (clicks == 4) {
+    } 
+    if (clicks == 7) {
       fourthNumber = 5;
-      }
+    }
   }
   if (mouseX>260 && mouseX<360 && mouseY>260 && mouseY<360 && mousePressed == true) {
-      if (clicks == 1) {
+    if (clicks == 1) {
       firstNumber = 6;
-      } if (clicks == 2) {
+    } 
+    if (clicks == 3) {
       secondNumber = 6;
-      } if (clicks == 3) {
+    } 
+    if (clicks == 5) {
       thirdNumber = 6;
-      } if (clicks == 4) {
+    } 
+    if (clicks == 7) {
       fourthNumber = 6;
-      }
+    }
   }
   if (mouseX>20 && mouseX<120 && mouseY>380 && mouseY<480 && mousePressed == true) {
-     if (clicks == 1) {
+    if (clicks == 1) {
       firstNumber = 1;
-      } if (clicks == 2) {
+    } 
+    if (clicks == 3) {
       secondNumber = 1;
-      } if (clicks == 3) {
+    } 
+    if (clicks == 5) {
       thirdNumber = 1;
-      } if (clicks == 4) {
+    } 
+    if (clicks == 7) {
       fourthNumber = 1;
-      }
+    }
   }
   if (mouseX>140 && mouseX<240 && mouseY>380 && mouseY<480 && mousePressed == true) {
-      if (clicks == 1) {
+    if (clicks == 1) {
       firstNumber = 2;
-      } if (clicks == 2) {
+    } 
+    if (clicks == 3) {
       secondNumber = 2;
-      } if (clicks == 3) {
+    } 
+    if (clicks == 5) {
       thirdNumber = 2;
-      } if (clicks == 4) {
+    } 
+    if (clicks == 7) {
       fourthNumber = 2;
-      }
+    }
   }
   if (mouseX>260 && mouseX<360 && mouseY>380 && mouseY<480 && mousePressed == true) {
-      if (clicks == 1) {
+    if (clicks == 1) {
       firstNumber = 3;
-      } if (clicks == 2) {
+    } 
+    if (clicks == 3) {
       secondNumber = 3;
-      } if (clicks == 3) {
+    } 
+    if (clicks == 5) {
       thirdNumber = 3;
-      } if (clicks == 4) {
+    } 
+    if (clicks == 7) {
       fourthNumber = 3;
-      }
+    }
   }
+  
   if (mouseX>140 && mouseX<240 && mouseY>500 && mouseY<600 && mousePressed == true) {
-      if (clicks == 1) {
+    if (clicks == 1) {
       firstNumber = 0;
-      } if (clicks == 2) {
+    } 
+    if (clicks == 3) {
       secondNumber = 0;
-      } if (clicks == 3) {
+    } 
+    if (clicks == 5) {
       thirdNumber = 0;
-      } if (clicks == 4) {
+    } 
+    if (clicks == 7) {
       fourthNumber = 0;
-      }
+    }
   }
+
+  textSize(80);
+  if (clicks == 1) {
+    fill(155);
+    text(String.format ("%,.0f", firstNumber), 70, 100);
+    text(String.format ("%,.0f", secondNumber), 220, 100);
+  } 
+  if (clicks > 1) {
+    fill(0);
+    text(String.format ("%,.0f", firstNumber), 70, 100);
+    
+  } 
+  if (clicks >= 4) {
+    fill(0);
+    text(String.format ("%,.0f", firstNumber), 70, 100);
+    text(String.format ("%,.0f", secondNumber), 220, 100);
+  }
+
+ // fill(0);
+  //text(clicks, 100, 200);
 };
+
+
 
 class NumberButton {
   int number;
@@ -314,13 +394,11 @@ class NumberButton {
   } 
 
   void drawButton(int xCoord, int yCoord) {
-    fill(255);
     rect(xCoord, yCoord, 100, 100, 16);
     fill(0);
     textSize(50);
     text(text, xCoord + 35, yCoord + 70);
-  } 
-
+  }
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -333,6 +411,7 @@ class FunctionButton {
   String text;
   int Height = 500;
   int textSize;
+
 
   FunctionButton() {
   }
@@ -359,12 +438,11 @@ class FunctionButton {
 
 
   void displayFunctionButton() {
-    fill(255, 255, 255);
+    fill (255);
     rect(xCoord, yCoord, 100, 100, 16); 
     fill(0, 0, 0);
     textAlign(CENTER);
     textSize(textSize);
     text(text, xCoord+50, yCoord+75);
-    
-}
+  }
 }
