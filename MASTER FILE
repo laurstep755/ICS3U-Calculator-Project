@@ -1,11 +1,3 @@
-if (clicks > 1 && firstNumber == 0 && secondNumber == 0) {
-    fill(155);
-    rect(20, 20, 460, 100, 16);
-    fill(0);
-    textSize(24);
-    text("What are you trying to achieve?", 230, 80);
-    }
-
 String whichFunction;
 float firstNumber;
 float secondNumber =1;
@@ -380,6 +372,14 @@ void draw() {
     text(String.format ("%,.0f", secondNumber), 220, 100);
   }
 
+if (clicks > 1 && firstNumber == 0 && secondNumber == 0) {
+    fill(155);
+    rect(20, 20, 460, 100, 16);
+    fill(0);
+    textSize(24);
+    text("What are you trying to achieve?", 230, 80);
+    }
+    
  // fill(0);
   //text(clicks, 100, 200);
 };
