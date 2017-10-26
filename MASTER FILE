@@ -154,23 +154,23 @@ void draw() {
   equalButton.displayFunctionButton();
   clearButton.displayFunctionButton();
 
-  if (mousePressed == true && mouseX >380 && mouseX < 480 && mouseY > 500 && mouseY <600) {
+  if (mousePressed == true && mouseX >addButton.xCoord && mouseX < addButton.xCoord +100 && mouseY > addButton.yCoord && mouseY <addButton.yCoord +100) {
     whichFunction = "add";
   } 
-  if (mousePressed == true && mouseX >380 && mouseX < 480 && mouseY > 380 && mouseY <480) {
+  if (mousePressed == true && mouseX > subtractButton.xCoord && mouseX < subtractButton.xCoord +100 && mouseY > subtractButton.yCoord && mouseY < subtractButton.yCoord +100) {
     whichFunction = "subtract";
   } 
-  if (mousePressed == true && mouseX >380 && mouseX < 480 && mouseY > 260 && mouseY <360) {
+  if (mousePressed == true && mouseX > multiplyButton.xCoord && mouseX < multiplyButton.xCoord +100 && mouseY > multiplyButton.yCoord && mouseY < multiplyButton.yCoord +100) {
     whichFunction = "multiply";
   } 
-  if (mousePressed == true && mouseX >380 && mouseX < 480 && mouseY > 140 && mouseY <240) {
+  if (mousePressed == true && mouseX > divideButton.xCoord && mouseX < divideButton.xCoord +100 && mouseY > divideButton.yCoord && mouseY < divideButton.yCoord +100) {
     whichFunction = "divide";
   }
-  if (mousePressed == true && mouseX >260 && mouseX < 360 && mouseY > 500 && mouseY <600) {
+  if (mousePressed == true && mouseX > equalButton.xCoord && mouseX < equalButton.xCoord +100 && mouseY > equalButton.yCoord && mouseY < equalButton.yCoord +100) {
     equalButtonPressed = true;
   } 
 
-  if (mousePressed == true && mouseX >20 && mouseX < 140 && mouseY > 500 && mouseY <600) {
+  if (mousePressed == true && mouseX >clearButton.xCoord && mouseX < clearButton.xCoord +100 && mouseY > clearButton.yCoord && mouseY < clearButton.yCoord +100) {
     setup();
     equalButtonPressed = false;
     whichFunction = null;
