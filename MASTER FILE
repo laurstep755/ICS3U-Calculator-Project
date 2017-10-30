@@ -61,7 +61,30 @@ void setup() {
   b8.setText("2");
   b9.setText("3");
   b10.setText("0");
-  
+
+  b1.setXCoord(20);
+  b2.setXCoord(140);
+  b3.setXCoord(260);
+  b4.setXCoord(20);
+  b5.setXCoord(140);
+  b6.setXCoord(260);
+  b7.setXCoord(20);
+  b8.setXCoord(140);
+  b9.setXCoord(260);
+  b10.setXCoord(140);
+
+  b1.setYCoord(140);
+  b2.setYCoord(140);
+  b3.setYCoord(140);
+  b4.setYCoord(260);
+  b5.setYCoord(260);
+  b6.setYCoord(260);
+  b7.setYCoord(380);
+  b8.setYCoord(380);
+  b9.setYCoord(380);
+  b10.setYCoord(500);
+
+
   addButton = new FunctionButton();
   addButton.setXCoord (380);
   addButton.setYCoord(500);
@@ -124,25 +147,25 @@ void mouseClicked() {
 
 void draw() {
   fill(255, 113, 113);
-  b1.drawButton(20, 140);
+  b1.drawButton();
   fill(255, 165, 113);
-  b2.drawButton(140, 140);
+  b2.drawButton();
   fill(255, 206, 113);
-  b3.drawButton(260, 140);
+  b3.drawButton();
   fill(255, 241, 113);
-  b4.drawButton(20, 260);
+  b4.drawButton();
   fill(203, 255, 113);
-  b5.drawButton(140, 260);
+  b5.drawButton();
   fill(113, 255, 121);
-  b6.drawButton(260, 260);
+  b6.drawButton();
   fill(113, 206, 255);
-  b7.drawButton(20, 380);
+  b7.drawButton();
   fill(124, 113, 255);
-  b8.drawButton(140, 380);
+  b8.drawButton();
   fill(179, 113, 255);
-  b9.drawButton(260, 380);
+  b9.drawButton();
   fill(247, 180, 247);
-  b10.drawButton(140, 500);
+  b10.drawButton();
 
 
 
@@ -199,21 +222,26 @@ void draw() {
   }
 
   if (whichFunction == "divide") {
-    answer = firstNumber / secondNumber;
-    textSize(80);
-    text("÷", 150, 100);
+    if (secondNumber == 0 && equalButtonPressed  == true) {
+      fill (#898BA0);
+    } else {
+      answer = firstNumber / secondNumber;
+      textSize(80);
+      text("÷", 150, 100);
+    }
   }
 
   if (equalButtonPressed == true) {
     textSize(80);
-    if(whichFunction == "divide") {
-    text(String.format ("%,.1f", answer), 400, 100); }
-    if((whichFunction == "add") || (whichFunction == "subtract") || (whichFunction == "multiply")) {
-    text(String.format ("%,.0f", answer), 400, 100); }
+    if (whichFunction == "divide") {
+      text(String.format ("%,.1f", answer), 400, 100);
+    }
+    if ((whichFunction == "add") || (whichFunction == "subtract") || (whichFunction == "multiply")) {
+      text(String.format ("%,.0f", answer), 400, 100);
+    }
     text("=", 305, 100);
   }
-
-  if (mouseX>20 && mouseX<120 && mouseY>140 && mouseY<240 && mousePressed == true) {
+  if (mouseX>b1.xCoord && mouseX<(b1.xCoord +100) && mouseY>b1.yCoord && mouseY< (b1.yCoord +100) && mousePressed == true) {
     if (clicks == 1) {
       firstNumber = 7;
     } 
@@ -227,7 +255,7 @@ void draw() {
       fourthNumber = 7;
     }
   }
-  if (mouseX>140 && mouseX<240 && mouseY>140 && mouseY<240 && mousePressed == true) {
+  if (mouseX>b2.xCoord && mouseX<b2.xCoord +100 && mouseY>b2.yCoord && mouseY< b2.yCoord +100 && mousePressed == true) {
     if (clicks == 1) {
       firstNumber = 8;
     } 
@@ -241,7 +269,7 @@ void draw() {
       fourthNumber = 8;
     }
   }
-  if (mouseX>260 && mouseX<360 && mouseY>140 && mouseY<240 && mousePressed == true) {
+  if (mouseX>b3.xCoord && mouseX<b3.xCoord +100 && mouseY>b3.yCoord && mouseY< b3.yCoord +100 && mousePressed == true) {
     if (clicks == 1) {
       firstNumber = 9;
     } 
@@ -255,7 +283,7 @@ void draw() {
       fourthNumber = 9;
     }
   }
-  if (mouseX>20 && mouseX<120 && mouseY>260 && mouseY<360 && mousePressed == true) {
+  if (mouseX>b4.xCoord && mouseX<b4.xCoord +100 && mouseY>b4.yCoord && mouseY< b4.yCoord +100 && mousePressed == true) {
     if (clicks == 1) {
       firstNumber = 4;
     } 
@@ -269,7 +297,7 @@ void draw() {
       fourthNumber = 4;
     }
   }
-  if (mouseX>140 && mouseX<240 && mouseY>260 && mouseY<360 && mousePressed == true) {
+  if (mouseX>b5.xCoord && mouseX<b5.xCoord +100 && mouseY>b5.yCoord && mouseY< b5.yCoord +100&& mousePressed == true) {
     if (clicks == 1) {
       firstNumber = 5;
     } 
@@ -283,7 +311,7 @@ void draw() {
       fourthNumber = 5;
     }
   }
-  if (mouseX>260 && mouseX<360 && mouseY>260 && mouseY<360 && mousePressed == true) {
+  if (mouseX>b6.xCoord && mouseX<b6.xCoord +100 && mouseY>b6.yCoord && mouseY< b6.yCoord +100 && mousePressed == true) {
     if (clicks == 1) {
       firstNumber = 6;
     } 
@@ -297,7 +325,7 @@ void draw() {
       fourthNumber = 6;
     }
   }
-  if (mouseX>20 && mouseX<120 && mouseY>380 && mouseY<480 && mousePressed == true) {
+  if (mouseX>b7.xCoord && mouseX<b7.xCoord +100 && mouseY>b7.yCoord && mouseY< b7.yCoord +100 && mousePressed == true) {
     if (clicks == 1) {
       firstNumber = 1;
     } 
@@ -311,7 +339,7 @@ void draw() {
       fourthNumber = 1;
     }
   }
-  if (mouseX>140 && mouseX<240 && mouseY>380 && mouseY<480 && mousePressed == true) {
+  if (mouseX>b8.xCoord && mouseX<b8.xCoord +100 && mouseY>b8.yCoord && mouseY< b8.yCoord +100 && mousePressed == true) {
     if (clicks == 1) {
       firstNumber = 2;
     } 
@@ -325,7 +353,7 @@ void draw() {
       fourthNumber = 2;
     }
   }
-  if (mouseX>260 && mouseX<360 && mouseY>380 && mouseY<480 && mousePressed == true) {
+  if (mouseX>b9.xCoord && mouseX<b9.xCoord +100 && mouseY>b9.yCoord && mouseY< b9.yCoord +100 && mousePressed == true) {
     if (clicks == 1) {
       firstNumber = 3;
     } 
@@ -339,8 +367,8 @@ void draw() {
       fourthNumber = 3;
     }
   }
-  
-  if (mouseX>140 && mouseX<240 && mouseY>500 && mouseY<600 && mousePressed == true) {
+
+  if (mouseX>b10.xCoord && mouseX<b10.xCoord +100 && mouseY>b10.yCoord && mouseY< b10.yCoord +100 && mousePressed == true) {
     if (clicks == 1) {
       firstNumber = 0;
     } 
@@ -364,7 +392,6 @@ void draw() {
   if (clicks > 1) {
     fill(0);
     text(String.format ("%,.0f", firstNumber), 70, 100);
-    
   } 
   if (clicks >= 4) {
     fill(0);
@@ -372,16 +399,12 @@ void draw() {
     text(String.format ("%,.0f", secondNumber), 220, 100);
   }
 
-if (clicks > 1 && firstNumber == 0 && secondNumber == 0) {
+  if (secondNumber == 0 && whichFunction == "divide" && equalButtonPressed == true) {
     fill(155);
     rect(20, 20, 460, 100, 16);
     fill(0);
-    textSize(24);
-    text("What are you trying to achieve?", 230, 80);
-    }
-    
- // fill(0);
-  //text(clicks, 100, 200);
+    text("STOP.", 250, 100);
+  }
 };
 
 
@@ -392,7 +415,6 @@ class NumberButton {
   int yCoord;
   String text;
 
-
   NumberButton(int nnumber) {
     number = nnumber;
   }
@@ -401,7 +423,15 @@ class NumberButton {
     text = ttext;
   } 
 
-  void drawButton(int xCoord, int yCoord) {
+  void setXCoord (int xxCoord) {
+    xCoord = xxCoord;
+  }
+
+  void setYCoord (int yyCoord) {
+    yCoord = yyCoord;
+  }
+
+  void drawButton() {
     rect(xCoord, yCoord, 100, 100, 16);
     fill(0);
     textSize(50);
@@ -454,3 +484,4 @@ class FunctionButton {
     text(text, xCoord+50, yCoord+75);
   }
 }
+
