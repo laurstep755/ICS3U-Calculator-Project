@@ -1,15 +1,10 @@
+//establish global variables
 String whichFunction;
 float firstNumber;
-float secondNumber =1;
-float thirdNumber;
-float fourthNumber;
+float secondNumber = 1;
 boolean equalButtonPressed;
 float answer;
-boolean pressed;
-int red;
-int blue;
-int green;
-
+int clicks = 0;
 
 NumberButton b1;
 NumberButton b2;
@@ -22,8 +17,6 @@ NumberButton b8;
 NumberButton b9;
 NumberButton b10;
 
-
-
 FunctionButton addButton;
 FunctionButton subtractButton;
 FunctionButton multiplyButton;
@@ -34,12 +27,14 @@ FunctionButton clearButton;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void setup() {
+//setting background
   size(500, 620);
   fill(#898BA0);
   rect(0, 0, 500, 620);
   fill(155);
   rect(20, 20, 460, 100, 16);
 
+//creating new instances of the number button class
   b1 = new NumberButton(1);
   b2 = new NumberButton(2);
   b3 = new NumberButton(3);
@@ -51,6 +46,7 @@ void setup() {
   b9 = new NumberButton(9);
   b10 = new NumberButton(10);
 
+//setting display text on buttons
   b1.setText("7");
   b2.setText("8");
   b3.setText("9");
@@ -62,6 +58,7 @@ void setup() {
   b9.setText("3");
   b10.setText("0");
 
+//setting coordinates for number buttons
   b1.setXCoord(20);
   b2.setXCoord(140);
   b3.setXCoord(260);
@@ -84,7 +81,7 @@ void setup() {
   b9.setYCoord(380);
   b10.setYCoord(500);
 
-
+//setting up methods for function buttons
   addButton = new FunctionButton();
   addButton.setXCoord (380);
   addButton.setYCoord(500);
@@ -127,24 +124,16 @@ void setup() {
   clearButton.setText("A/C");
   clearButton.setTextSize(40);
 
-  mouseClicked();
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-int clicks = 0;
-
+//increment clicks
 void mouseClicked() {
   clicks = clicks + 1;
-  if (mousePressed) {
-    pressed = true;
-  } else {
-    pressed = false;
-  }
 };
 
-
-
+//draws buttons
 void draw() {
   fill(255, 113, 113);
   b1.drawButton();
@@ -167,8 +156,6 @@ void draw() {
   fill(247, 180, 247);
   b10.drawButton();
 
-
-
   fill(255, 255, 255);
   addButton.displayFunctionButton(); 
   subtractButton.displayFunctionButton(); 
@@ -177,6 +164,7 @@ void draw() {
   equalButton.displayFunctionButton();
   clearButton.displayFunctionButton();
 
+//setting which function you press depending on the mouse coordinates
   if (mousePressed == true && mouseX >addButton.xCoord && mouseX < addButton.xCoord +100 && mouseY > addButton.yCoord && mouseY <addButton.yCoord +100) {
     whichFunction = "add";
   } 
@@ -192,17 +180,18 @@ void draw() {
   if (mousePressed == true && mouseX > equalButton.xCoord && mouseX < equalButton.xCoord +100 && mouseY > equalButton.yCoord && mouseY < equalButton.yCoord +100) {
     equalButtonPressed = true;
   } 
-
+  
+//creating clear/reset button
   if (mousePressed == true && mouseX >clearButton.xCoord && mouseX < clearButton.xCoord +100 && mouseY > clearButton.yCoord && mouseY < clearButton.yCoord +100) {
     setup();
     equalButtonPressed = false;
     whichFunction = null;
     firstNumber = 0;
     secondNumber = 0;
-    thirdNumber = 0;
-    fourthNumber = 0;
     clicks=0;
   } 
+  
+  //performing the functions
   if (whichFunction == "add") {
     answer = firstNumber + secondNumber;
     textSize(80);
@@ -231,6 +220,8 @@ void draw() {
     }
   }
 
+//changing decimal places shown depending on function
+//displaying answer
   if (equalButtonPressed == true) {
     textSize(80);
     if (whichFunction == "divide") {
@@ -241,18 +232,14 @@ void draw() {
     }
     text("=", 305, 100);
   }
+  
+  //setting numbers to first number and second number depending on how many times the mouse has been clicked (to be calculated) 
   if (mouseX>b1.xCoord && mouseX<(b1.xCoord +100) && mouseY>b1.yCoord && mouseY< (b1.yCoord +100) && mousePressed == true) {
     if (clicks == 1) {
       firstNumber = 7;
     } 
     if (clicks == 3) {
       secondNumber = 7;
-    } 
-    if (clicks == 5) {
-      thirdNumber = 7;
-    } 
-    if (clicks == 7) {
-      fourthNumber = 7;
     }
   }
   if (mouseX>b2.xCoord && mouseX<b2.xCoord +100 && mouseY>b2.yCoord && mouseY< b2.yCoord +100 && mousePressed == true) {
@@ -262,12 +249,6 @@ void draw() {
     if (clicks == 3) {
       secondNumber = 8;
     } 
-    if (clicks == 5) {
-      thirdNumber = 8;
-    } 
-    if (clicks == 7) {
-      fourthNumber = 8;
-    }
   }
   if (mouseX>b3.xCoord && mouseX<b3.xCoord +100 && mouseY>b3.yCoord && mouseY< b3.yCoord +100 && mousePressed == true) {
     if (clicks == 1) {
@@ -276,12 +257,6 @@ void draw() {
     if (clicks == 3) {
       secondNumber = 9;
     } 
-    if (clicks == 5) {
-      thirdNumber = 9;
-    } 
-    if (clicks == 7) {
-      fourthNumber = 9;
-    }
   }
   if (mouseX>b4.xCoord && mouseX<b4.xCoord +100 && mouseY>b4.yCoord && mouseY< b4.yCoord +100 && mousePressed == true) {
     if (clicks == 1) {
@@ -290,12 +265,6 @@ void draw() {
     if (clicks == 3) {
       secondNumber = 4;
     } 
-    if (clicks == 5) {
-      thirdNumber = 4;
-    } 
-    if (clicks == 7) {
-      fourthNumber = 4;
-    }
   }
   if (mouseX>b5.xCoord && mouseX<b5.xCoord +100 && mouseY>b5.yCoord && mouseY< b5.yCoord +100&& mousePressed == true) {
     if (clicks == 1) {
@@ -304,12 +273,6 @@ void draw() {
     if (clicks == 3) {
       secondNumber = 5;
     } 
-    if (clicks == 5) {
-      thirdNumber = 5;
-    } 
-    if (clicks == 7) {
-      fourthNumber = 5;
-    }
   }
   if (mouseX>b6.xCoord && mouseX<b6.xCoord +100 && mouseY>b6.yCoord && mouseY< b6.yCoord +100 && mousePressed == true) {
     if (clicks == 1) {
@@ -318,12 +281,6 @@ void draw() {
     if (clicks == 3) {
       secondNumber = 6;
     } 
-    if (clicks == 5) {
-      thirdNumber = 6;
-    } 
-    if (clicks == 7) {
-      fourthNumber = 6;
-    }
   }
   if (mouseX>b7.xCoord && mouseX<b7.xCoord +100 && mouseY>b7.yCoord && mouseY< b7.yCoord +100 && mousePressed == true) {
     if (clicks == 1) {
@@ -332,12 +289,6 @@ void draw() {
     if (clicks == 3) {
       secondNumber = 1;
     } 
-    if (clicks == 5) {
-      thirdNumber = 1;
-    } 
-    if (clicks == 7) {
-      fourthNumber = 1;
-    }
   }
   if (mouseX>b8.xCoord && mouseX<b8.xCoord +100 && mouseY>b8.yCoord && mouseY< b8.yCoord +100 && mousePressed == true) {
     if (clicks == 1) {
@@ -346,12 +297,6 @@ void draw() {
     if (clicks == 3) {
       secondNumber = 2;
     } 
-    if (clicks == 5) {
-      thirdNumber = 2;
-    } 
-    if (clicks == 7) {
-      fourthNumber = 2;
-    }
   }
   if (mouseX>b9.xCoord && mouseX<b9.xCoord +100 && mouseY>b9.yCoord && mouseY< b9.yCoord +100 && mousePressed == true) {
     if (clicks == 1) {
@@ -360,12 +305,6 @@ void draw() {
     if (clicks == 3) {
       secondNumber = 3;
     } 
-    if (clicks == 5) {
-      thirdNumber = 3;
-    } 
-    if (clicks == 7) {
-      fourthNumber = 3;
-    }
   }
 
   if (mouseX>b10.xCoord && mouseX<b10.xCoord +100 && mouseY>b10.yCoord && mouseY< b10.yCoord +100 && mousePressed == true) {
@@ -375,14 +314,10 @@ void draw() {
     if (clicks == 3) {
       secondNumber = 0;
     } 
-    if (clicks == 5) {
-      thirdNumber = 0;
-    } 
-    if (clicks == 7) {
-      fourthNumber = 0;
-    }
   }
 
+//getting the float decimals on first and second number
+//showing numbers on display
   textSize(80);
   if (clicks == 1) {
     fill(155);
@@ -398,7 +333,8 @@ void draw() {
     text(String.format ("%,.0f", firstNumber), 70, 100);
     text(String.format ("%,.0f", secondNumber), 220, 100);
   }
-
+  
+  //display stop message if someone tries to divide by zero
   if (secondNumber == 0 && whichFunction == "divide" && equalButtonPressed == true) {
     fill(155);
     rect(20, 20, 460, 100, 16);
@@ -407,8 +343,7 @@ void draw() {
   }
 };
 
-
-
+//create number button class
 class NumberButton {
   int number;
   int xCoord;
@@ -441,6 +376,7 @@ class NumberButton {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//crerate function button class
 class FunctionButton {
 
   int xCoord;
@@ -449,7 +385,6 @@ class FunctionButton {
   String text;
   int Height = 500;
   int textSize;
-
 
   FunctionButton() {
   }
